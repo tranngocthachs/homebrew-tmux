@@ -20,6 +20,9 @@ class Tmux < Formula
     depends_on "libtool" => :build
   end
 
+  option "with-copy-pipe-x-patch", "copy-pipe-x patch"
+  
+
   depends_on "pkg-config" => :build
   depends_on "libevent"
   depends_on "utf8proc"
@@ -27,7 +30,7 @@ class Tmux < Formula
   patch do
     url "https://raw.githubusercontent.com/tranngocthachs/homebrew-tmux/master/patches/copy_pipe_x.diff"
     sha256 "ecc63ddb4f2f0d986da7d4e9f0bd77507354ed0741d919fef44384cda4a94b69"
-  end if build.with? "copy-pipe-x"
+  end if build.with? "copy-pipe-x-patch"
 
   resource "completion" do
     url "https://raw.githubusercontent.com/imomaliev/tmux-bash-completion/homebrew_1.0.0/completions/tmux"
