@@ -24,6 +24,11 @@ class Tmux < Formula
   depends_on "libevent"
   depends_on "utf8proc"
 
+  patch do
+    url "https://raw.githubusercontent.com/tranngocthachs/homebrew-tmux/master/patches/copy_pipe_x.diff"
+    sha256 "ecc63ddb4f2f0d986da7d4e9f0bd77507354ed0741d919fef44384cda4a94b69"
+  end if build.with? "copy-pipe-x"
+
   resource "completion" do
     url "https://raw.githubusercontent.com/imomaliev/tmux-bash-completion/homebrew_1.0.0/completions/tmux"
     sha256 "05e79fc1ecb27637dc9d6a52c315b8f207cf010cdcee9928805525076c9020ae"
