@@ -1,0 +1,12 @@
+diff --git a/window-copy.c b/window-copy.c
+index 320cc3d..e22cac6 100644
+--- a/window-copy.c
++++ b/window-copy.c
+@@ -691,7 +691,6 @@ window_copy_key(struct window_pane *wp, struct client *c, struct session *sess,
+ 	case MODEKEYCOPY_COPYPIPE:
+ 		if (sess != NULL) {
+ 			window_copy_copy_pipe(wp, sess, NULL, arg);
+-			window_pane_reset_mode(wp);
+ 			return;
+ 		}
+ 		break;
